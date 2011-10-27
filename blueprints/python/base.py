@@ -1,12 +1,4 @@
 #!/usr/bin/env python
-# encoding: utf-8
-"""
-base.py
-
-Created by Brandon Ashworth on 2010-12-25.
-Copyright (c) 2010 __MyCompanyName__. All rights reserved.
-"""
-
 from optparse import make_option
 
 from builder.api.blueprint import Blueprint
