@@ -2,7 +2,7 @@
 """
 {{ filename }}
 
-Created by {{name}} <{{email}}> on {{ now.strftime("%m/%d/%Y") }}.
+Created by {{name}} <{{email}}>.
 Copyright (c) {{ now.strftime("%Y") }}. All rights reserved.
 """
 
