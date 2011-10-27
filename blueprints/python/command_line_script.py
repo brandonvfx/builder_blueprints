@@ -27,6 +27,7 @@ class CommandLineScript(PythonBlueprint):
         output_fd = open(file_path, 'w')
         output_fd.write(self.renderTemplate('cmdline_script.txt', context))
         output_fd.close()
-        print "Generated: %s" % file_path
+        self.log.info("Generated: %s", file_path)
+    # end def run
     
 # end class CommandLineScript

@@ -19,6 +19,5 @@ class PythonBlueprint(Blueprint):
         if self.errors:
             return False
         return True
-    # end def validateOptions
-    
-# end class Python
+    # end def validate
+# end class PythonBlueprint
