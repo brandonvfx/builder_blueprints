@@ -1,9 +1,19 @@
 {% include "header.txt" %}
 {% include "default_imports.txt" %}
 
+def build_parser():
+    prog = os.path.splitext(os.path.basename(__file__))[0]
+    parser = OptionParser(prog=prog)
+    
+    return parser
+# end def build_parser
+
 def main():
-    pass
+    parser = build_parser()
+    options, args = parser.parse_args()
+# end def main
 
 if __name__ == '__main__':
     main()
+# end if
 

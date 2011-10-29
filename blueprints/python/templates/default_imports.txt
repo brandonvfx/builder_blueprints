@@ -1,11 +1,22 @@
 # Standard Libs
 import os
 import sys
-from optparse import OptionParser
+{% for std_lib in std_libs %}
+{{ std_lib }}
+{% endfor %}
 
 # Personal Libs
+{% for personal_lib in personal_libs %}
+{{ personal_lib }}
+{% endfor %}
 
 # Thrid Party Libs
+{% for third_party_lib in third_party_libs %}
+{{ third_party_lib }}
+{% endfor %}
 
 # Package Libs
+{% for package_lib in package_libs %}
+{{ package_lib }}
+{% endfor %}
 

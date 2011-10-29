@@ -1,21 +1,20 @@
 #!/usr/bin/env python
-
 import os
 import sys
 
 from .base import PythonBlueprint
 
-class CommandLineScript(PythonBlueprint):
+class Module(PythonBlueprint):
     """ 
     :synopsis: Class ScriptBase
     """
     
     class Meta:
-        name = "command_line_script"
+        name = "module"
         namespace = 'python'
-        aliases = ("cli",)
+        aliases = ("mod",)
         version = (1,0,0)
-        usage = '%prog python.command_line_script -f/--filename filename\n%prog python.command_line_script filename'
+        usage = '%prog python.module -n/--filename filename\n%prog python.module filename'
     # end class Meta
         
     template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -23,10 +22,9 @@ class CommandLineScript(PythonBlueprint):
     def run(self, context, args):
         filename = context.get('filename') or args[0]
         context['filename'] = filename
-        context['std_libs'] = ['from optparse import OptionParser']
         file_path = os.path.join(context['working_dir'], filename)
         output_fd = open(file_path, 'w')
-        output_fd.write(self.renderTemplate('cmdline_script.txt', context))
+        output_fd.write(self.renderTemplate('module.txt', context))
         output_fd.close()
         self.log.info("Generated: %s", file_path)
     # end def run

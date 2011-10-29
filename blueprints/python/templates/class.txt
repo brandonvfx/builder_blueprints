@@ -1,0 +1,5 @@
+class {{ class }}({{ inherit }}):
+    def __init__(self):
+        super({{ class }}, self).__init__()
+    # end def __init__
+# end class {{ class }}
